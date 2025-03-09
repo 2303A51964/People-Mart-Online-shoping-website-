@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Orders</title>
+    <style>
+        /* Basic Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f3f8f3;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(90deg, #004d40, #00695c);
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 24px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        /* Orders Section Styling */
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .order-item {
+            border: 2px solid #006400;
+            border-radius: 10px;
+            background-color: #fff;
+            padding: 15px;
+            margin: 10px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+        }
+
+        .order-item img {
+            max-width: 80px;
+            margin-right: 15px;
+            border-radius: 5px;
+        }
+
+        .order-item p {
+            margin: 5px 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #004d40;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>PeopleMart</h1>
+        <nav>
+            <ul>
+                <li><a href="homepagee.html">Home</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="order.html">Orders</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Your Orders</h2>
+        <div id="order-items">
+            <!-- Orders will be displayed here -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 PeopleMart. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Directly add OnePlus Earbuds to the orders
+        function displayOrders() {
+            let orders = [
+                {
+                    name: "OnePlus Earbuds",
+                    price: 999,
+                    img: "https://www.rollingstone.com/wp-content/uploads/2022/09/Apple-AirPods-Pro-2nd-gen-hero-220907.jpg?w=1600&h=900&crop=1"
+                }
+            ];
+
+            let ordersContainer = document.getElementById('order-items');
+            ordersContainer.innerHTML = '';
+
+            if (orders.length === 0) {
+                ordersContainer.innerHTML = '<p>You have no orders yet.</p>';
+                return;
+            }
+
+            orders.forEach(product => {
+                let productDiv = document.createElement('div');
+                productDiv.classList.add('order-item');
+                productDiv.innerHTML = `
+                    <img src="${product.img}" alt="${product.name}">
+                    <div>
+                        <p>Product: ${product.name}</p>
+                        <p>Price: ₹${product.price}</p>
+                    </div>
+                `;
+                ordersContainer.appendChild(productDiv);
+            });
+        }
+
+        // Initialize and display orders on page load
+        window.onload = function() {
+            displayOrders();
+        };
+    </script>
+</body>
+</html>

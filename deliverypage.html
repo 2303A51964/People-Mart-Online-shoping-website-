@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeopleMart - Checkout</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Dark Green Theme Colors */
+        :root {
+            --darkest-green: #013220;
+            --white: #ffffff;
+            --light-gray: #f0f0f0;
+        }
+
+        /* Body Styling */
+        body {
+            background-color: var(--darkest-green);
+            color: var(--white);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Header Styling */
+        header {
+            text-align: center;
+            padding: 20px;
+            border-bottom: 2px solid var(--white);
+        }
+
+        h1 {
+            color: var(--white);
+        }
+
+        /* Main Form Styling */
+        main {
+            width: 90%;
+            max-width: 600px;
+            background-color: var(--darkest-green);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        h2 {
+            margin-bottom: 10px;
+            color: var(--white);
+        }
+
+        /* Form Group Styling */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--white);
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--white);
+            border-radius: 5px;
+            background-color: var(--darkest-green);
+            color: var(--white);
+        }
+
+        input::placeholder {
+            color: var(--light-gray);
+        }
+
+        /* Button Styling */
+        #submit-button {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--white);
+            color: var(--darkest-green);
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #submit-button:hover {
+            background-color: var(--light-gray);
+        }
+
+        /* Footer Styling */
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            color: var(--white);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Checkout</h1>
+    </header>
+
+    <main>
+        <form id="checkout-form">
+            <h2>Delivery Information</h2>
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="fullName" placeholder="John Doe" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="john@example.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="123-456-7890" required>
+            </div>
+
+            <h2>Delivery Address</h2>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" placeholder="123 Main St" required>
+            </div>
+
+            <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" placeholder="New York" required>
+            </div>
+
+            <div class="form-group">
+                <label for="state">State</label>
+                <input type="text" id="state" name="state" placeholder="NY" required>
+            </div>
+
+            <div class="form-group">
+                <label for="zip">Zip Code</label>
+                <input type="text" id="zip" name="zip" placeholder="10001" required>
+            </div>
+
+            <h2>Payment Information</h2>
+            <div class="form-group">
+                <label for="cardNumber">Card Number</label>
+                <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" maxlength="16" required>
+            </div>
+
+            <div class="form-group">
+                <label for="expiryDate">Expiry Date</label>
+                <input type="month" id="expiryDate" name="expiryDate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="123" maxlength="3" required>
+            </div>
+
+            <button type="button" id="submit-button" onclick="placeOrder()">Place Order</button>
+            
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 PeopleMart. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Function to validate the form and handle form submission
+        function placeOrder() {
+            // Get all the form fields
+            const formFields = document.querySelectorAll("#checkout-form input");
+            let formValid = true;
+            let missingFields = [];
+
+            // Check if any required field is empty
+            formFields.forEach(field => {
+                if (!field.value.trim()) {
+                    formValid = false;
+                    missingFields.push(field.previousElementSibling.textContent);  // Get the label text
+                }
+            });
+
+            // If the form is not valid, show an alert with the missing fields
+            if (!formValid) {
+                alert("Please enter the following details: " + missingFields.join(", "));
+            } else {
+                // If all fields are filled, proceed with placing the order
+                alert("Your order has been successfully placed!");
+                window.location.href = 'deliverysuccessfull.html';
+            }
+        }
+    </script>
+</body>
+</html>

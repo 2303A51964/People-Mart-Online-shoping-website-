@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeopleMart - Home & Kitchen</title>
+    <style>
+        /* Basic Reset and Font */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #004d40;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 24px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        /* Product Grid */
+        #home-kitchen-products {
+            padding: 20px;
+            background-color: #e0f2f1;
+        }
+
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .product-item {
+            width: 22%;
+            background-color: #fff;
+            margin: 10px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .product-item:hover {
+            transform: scale(1.05);
+        }
+
+        .product-item img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .product-item p {
+            margin: 10px 0;
+            color: #004d40;
+        }
+
+        .product-item button {
+            background-color: #004d40;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Back Button */
+        .back-button {
+            display: block;
+            margin: 20px auto;
+            background-color: #004d40;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>PeopleMart - Home & Kitchen</h1>
+        <nav>
+            <ul>
+                <li><a href="homepagee.html">Home</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="order.html">Orders</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="home-kitchen-products">
+        <h2 style="text-align: center; color: #004d40;">Home & Kitchen Collection</h2>
+        <div class="product-grid">
+            <div class="product-item">
+                <img src="https://th.bing.com/th/id/OIP.HYwfBei_aHC24TW-iYZanQHaHa?w=186&h=186&c=7&r=0&o=5&dpr=1.3&pid=1.7.jpg" alt="Blender">
+                <p>Blender</p>
+                <p>₹1500</p>
+                <button onclick="location.href='cart.html'">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="https://th.bing.com/th/id/OIP.-FqWkwtrPylviU45r4pY8gHaGd?w=203&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7.jpg" alt="Cookware Set">
+                <p>Cookware Set</p>
+                <p>₹2500</p>
+                <button onclick="location.href='cart.html'">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="https://th.bing.com/th/id/OIP.d-ui2OBL8HbKPFZNywaLiwHaID?w=151&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7.jpg" alt="Vacuum Cleaner">
+                <p>Vacuum Cleaner</p>
+                <p>₹4000</p>
+                <button onclick="location.href='cart.html'">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="https://th.bing.com/th/id/OIP.yp4oCLKBUmbJaeL5F6hdkQHaHa?w=194&h=194&c=7&r=0&o=5&dpr=1.3&pid=1.7.jpg" alt="Air Fryer">
+                <p>Air Fryer</p>
+                <p>₹3000</p>
+                <button onclick="location.href='cart.html'">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Back to Home Page -->
+        <a href="homepagee.html" class="back-button">Back to Home</a>
+    </main>
+</body>
+</html>

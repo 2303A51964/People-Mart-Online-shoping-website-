@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation - PeopleMart</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Dark Green Theme Colors */
+        :root {
+            --darkest-green: #013220;
+            --white: #ffffff;
+            --light-gray: #f0f0f0;
+        }
+
+        /* Body Styling */
+        body {
+            background-color: var(--darkest-green);
+            color: var(--white);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        /* Confirmation Container */
+        .confirmation-container {
+            text-align: center;
+            background-color: var(--darkest-green);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .confirmation-container h1 {
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .confirmation-container p {
+            color: var(--light-gray);
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        /* Icon Styling */
+        .success-icon {
+            font-size: 50px;
+            color: #4CAF50; /* Success Green */
+            margin-bottom: 20px;
+        }
+
+        /* Button Styling */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 15px 25px;
+            background-color: var(--white);
+            color: var(--darkest-green);
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--light-gray);
+        }
+    </style>
+</head>
+<body>
+    <div class="confirmation-container">
+        <div class="success-icon">✔️</div>
+        <h1>Order Placed Successfully!</h1>
+        <p>Thank you for shopping with PeopleMart. Your order has been placed successfully and is now being processed.</p>
+        <p>You will receive a confirmation email shortly with your order details.</p>
+
+        <div class="button-container">
+            <button class="btn" onclick="window.location.href='homepagee.html'">Back to Home</button>
+            <button class="btn" onclick="window.location.href='categories.html'">Continue Shopping</button>
+        </div>
+    </div>
+</body>
+</html>

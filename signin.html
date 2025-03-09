@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People Mart - Sign In</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Body with Neat Background */
+        body {
+            background: linear-gradient(120deg, #e0f7fa, #80deea, #004d40);
+            background-size: 300% 300%;
+            animation: gradientBG 10s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Gradient Animation */
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Sign-in Container */
+        .signin-container {
+            width: 100%;
+            max-width: 400px;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        /* Logo Placeholder */
+        .signin-container img {
+            width: 150px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
+        /* Heading Styles */
+        .signin-container h2 {
+            color: #004d40;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Input Fields */
+        .signin-container input[type="text"],
+        .signin-container input[type="password"] {
+            width: 100%;
+            padding: 0.8rem;
+            margin: 0.5rem 0;
+            border: 1px solid #004d40;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        /* Submit Button */
+        .signin-container button {
+            width: 100%;
+            padding: 0.8rem;
+            margin-top: 1rem;
+            background-color: #004d40;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .signin-container button:hover {
+            background-color: #00695c;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            position: absolute;
+            bottom: 10px;
+            color: white;
+            text-align: center;
+            width: 100%;
+            font-size: 0.8rem;
+        }
+
+        footer a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="signin-container">
+        <img src="https://th.bing.com/th/id/OIP.XBT7sPTOsGjz2N7sdhp_lAHaHa?w=171&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7.jpg" alt="People Mart Logo">
+        <h2>Welcome to People Mart</h2>
+        <form action="signinsucessfull.html" method="get">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Sign In</button>
+        </form>
+    </div>
+    <footer>
+        &copy; 2024 People Mart. <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <style>
+        /* Basic Reset and Font */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Body Background */
+        body {
+            background-color: #f3f8f3;
+            color: #333;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(90deg, #004d40, #00695c);
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 24px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        /* Cart Section Styling */
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .cart-item {
+            border: 2px solid #006400;
+            border-radius: 10px;
+            background-color: #fff;
+            padding: 15px;
+            margin: 10px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+        }
+
+        .cart-item img {
+            max-width: 80px;
+            margin-right: 15px;
+            border-radius: 5px;
+        }
+
+        .cart-item p {
+            margin: 5px 0;
+        }
+
+        .cart-item button {
+            background-color: #b22222;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-left: auto;
+        }
+
+        .cart-item button:hover {
+            background-color: #8b0000;
+        }
+
+        /* Button styling */
+        button {
+            background-color: #006400;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #004d00;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #004d40;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>PeopleMart</h1>
+        <nav>
+            <ul>
+                <li><a href="homepagee.html">Home</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="order.html">Orders</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Your Cart</h2>
+        <div id="cart-items">
+            <!-- Cart items will be displayed here -->
+        </div>
+        <button onclick="checkout()">Checkout</button>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 PeopleMart. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Prepopulate the cart with three default items
+        function initializeCart() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Check if the cart is empty, then add default items
+            if (cart.length === 0) {
+                cart.push(
+                    { name: "Rolex Men's Watch", price: 50000, img: "https://th.bing.com/th/id/OIP.wmQ-rkoa1v_c5pFTIPMR8QHaFa?w=254&h=185&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
+                    { name: "OnePlus Earbuds", price: 999, img: "https://www.rollingstone.com/wp-content/uploads/2022/09/Apple-AirPods-Pro-2nd-gen-hero-220907.jpg?w=1600&h=900&crop=1" },
+                    { name: "iPhone 16 Pro", price: 100000, img: "https://cdn1.smartprix.com/rx-i5n1dTTOB-w1200-h1200/5n1dTTOB.jpg" }
+                );
+                localStorage.setItem('cart', JSON.stringify(cart));
+            }
+        }
+
+        // Function to display cart items
+        function displayCart() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let cartContainer = document.getElementById('cart-items');
+            cartContainer.innerHTML = '';
+
+            if (cart.length === 0) {
+                cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+                return;
+            }
+
+            cart.forEach((product, index) => {
+                let productDiv = document.createElement('div');
+                productDiv.classList.add('cart-item');
+                productDiv.innerHTML = `
+                    <img src="https://www.rollingstone.com/wp-content/uploads/2022/09/Apple-AirPods-Pro-2nd-gen-hero-220907.jpg?w=1600&h=900&crop=1.jpg}" alt="${product.name}">
+                    <div>
+                        <p>Product: ${product.name}</p>
+                        <p>Price: ₹${product.price}</p>
+                    </div>
+                    <button onclick="removeFromCart(${index})">Remove</button>
+                `;
+                cartContainer.appendChild(productDiv);
+            });
+        }
+
+        // Function to remove a product from the cart
+        function removeFromCart(index) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            displayCart();
+        }
+
+        // Function to handle checkout
+        function checkout() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            if (cart.length === 0) {
+                alert("Your cart is empty!");
+            } else {
+                alert("Proceeding to checkout...");
+                window.location.href = 'deliverypage.html';
+            }
+        }
+
+        // Initialize cart and display items on page load
+        window.onload = function() {
+            initializeCart();
+            displayCart();
+        };
+    </script>
+</body>
+</html>

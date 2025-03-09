@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories - PeopleMart</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Header */
+        header {
+            background-color: #004d40;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 24px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        /* Categories Section */
+        .categories-section {
+            padding: 20px;
+            text-align: center;
+            background-color: #e0f2f1;
+        }
+
+        .categories-section h2 {
+            color: #004d40;
+            margin-bottom: 20px;
+        }
+
+        .category-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .category-item {
+            width: 22%;
+            background-color: #fff;
+            margin: 10px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            font-size: 18px;
+        }
+
+        .category-item:hover {
+            transform: scale(1.05);
+        }
+
+        .category-item a {
+            color: #004d40;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #004d40;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>PeopleMart</h1>
+        <nav>
+            <ul>
+                <li><a href="homepagee.html">Home</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="order.html">Orders</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Categories Section -->
+    <section class="categories-section">
+        <h2>Shop by Category</h2>
+        <div class="category-grid">
+            <div class="category-item">
+                <a href="groceries.html">Groceries</a>
+                <p>Everyday essentials at unbeatable prices</p>
+            </div>
+            <div class="category-item">
+                <a href="clothing.html">Clothing</a>
+                <p>Affordable fashion for all ages</p>
+            </div>
+            <div class="category-item">
+                <a href="electronics.html">Electronics</a>
+                <p>Top deals on gadgets and devices</p>
+            </div>
+            <div class="category-item">
+                <a href="home and kitchen.html">Home & Kitchen</a>
+                <p>Make your home comfortable and stylish</p>
+            </div>
+            <div class="category-item">
+                <a href="beauty and personal.html">Beauty & Personal Care</a>
+                <p>High-quality products to feel your best</p>
+            </div>
+            <div class="category-item">
+                <a href="toys and games.html">Toys & Games</a>
+                <p>Fun and learning for kids of all ages</p>
+            </div>
+            <div class="category-item">
+                <a href="sports.html">Sports & Outdoors</a>
+                <p>Gear for fitness and adventure</p>
+            </div>
+            <div class="category-item">
+                <a href="stationery.html">Stationery</a>
+                <p>Supplies for school, work, and creativity</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 PeopleMart. All rights reserved.</p>
+    </footer>
+</body>
+</html>
