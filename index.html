@@ -13,8 +13,16 @@
     font-family: Arial, sans-serif;
 }
 
+/* 🔥 FULL HEIGHT FIX */
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     background: linear-gradient(120deg, #e0f7fa, #80deea);
+}
+
+main {
+    flex: 1;
 }
 
 /* HEADER */
@@ -25,14 +33,14 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* 🔥 important */
+    flex-wrap: wrap;
 }
 
 nav ul {
     list-style: none;
     display: flex;
     gap: 10px;
-    flex-wrap: wrap; /* 🔥 mobile fix */
+    flex-wrap: wrap;
 }
 
 nav ul li a {
@@ -45,10 +53,10 @@ nav ul li a {
 .banner {
     background: linear-gradient(90deg, #ffd740, #ffc107);
     color: #004d40;
-    padding: 15px;
+    padding: 12px;
     text-align: center;
-    font-size: 20px;
-    margin: 15px;
+    font-size: 18px;
+    margin: 10px; /* 🔥 reduced */
     border-radius: 10px;
 }
 
@@ -57,15 +65,15 @@ nav ul li a {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 10px;
-    gap: 15px;
+    padding: 5px; /* 🔥 reduced */
+    gap: 10px;
 }
 
 .category-item {
-    width: 200px;
+    width: 180px;
     background: white;
     border-radius: 8px;
-    padding: 15px;
+    padding: 12px;
     text-align: center;
     font-weight: bold;
     border: 1px solid #ccc;
@@ -79,19 +87,19 @@ nav ul li a {
 
 /* PRODUCTS */
 #featured {
-    padding: 15px;
+    padding: 10px; /* 🔥 reduced */
 }
 
 .product-grid {
-    display: grid; /* 🔥 changed from flex */
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px; /* 🔥 reduced */
 }
 
 /* CARD */
 .product-item {
     background-color: white;
-    padding: 12px;
+    padding: 10px; /* 🔥 reduced */
     text-align: center;
     border-radius: 10px;
     border: 1px solid #ccc;
@@ -100,10 +108,9 @@ nav ul li a {
 
 .product-item img {
     width: 100%;
-    height: 150px;
+    height: 140px;
     object-fit: contain;
-    background-color: white;
-    padding: 5px;
+    padding: 2px; /* 🔥 reduced */
     border-radius: 8px;
 }
 
@@ -121,7 +128,11 @@ nav ul li a {
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    width: 100%; /* 🔥 full width button */
+    width: 100%;
+}
+
+.product-item button:hover {
+    background-color: #00695c;
 }
 
 /* FOOTER */
@@ -130,10 +141,9 @@ footer {
     color: white;
     text-align: center;
     padding: 10px;
-    margin-top: 20px;
 }
 
-/* 🔥 MOBILE SPECIFIC FIX */
+/* MOBILE */
 @media (max-width: 600px) {
 
     header h1 {
@@ -142,11 +152,10 @@ footer {
 
     .banner {
         font-size: 16px;
-        padding: 10px;
     }
 
     .category-item {
-        width: 100%; /* full width */
+        width: 100%;
     }
 
     nav ul {
