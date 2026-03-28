@@ -92,20 +92,26 @@ nav ul li a {
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 10px; /* 🔥 reduced */
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 10px;
 }
 
 /* CARD */
 .product-item {
+    width: 180px;      /* 🔥 decreased width */
+    height: 350px;     /* 🔥 increased height */
+    
     background-color: white;
-    padding: 10px; /* 🔥 reduced */
+    padding: 10px;
     text-align: center;
     border-radius: 10px;
     border: 1px solid #ccc;
     box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-}
 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 .product-item img {
     width: 100%;
     height: 140px;
