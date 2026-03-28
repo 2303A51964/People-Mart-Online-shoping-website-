@@ -1,149 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PeopleMart - Affordable Shopping for Everyone</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PeopleMart - Affordable Shopping</title>
 
-    <style>
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
 
-        body {
-            background: linear-gradient(120deg, #e0f7fa, #80deea);
-            color: #333;
-        }
+body {
+    background: linear-gradient(120deg, #e0f7fa, #80deea);
+}
 
-        /* Header */
-        header {
-            background: linear-gradient(90deg, #004d40, #00695c);
-            color: white;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+/* HEADER */
+header {
+    background: linear-gradient(90deg, #004d40, #00695c);
+    color: white;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* 🔥 important */
+}
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 15px;
-        }
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap; /* 🔥 mobile fix */
+}
 
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-        }
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
 
-        /* Banner */
-        .banner {
-            background: linear-gradient(90deg, #ffd740, #ffc107);
-            color: #004d40;
-            padding: 20px;
-            text-align: center;
-            font-size: 24px;
-            margin: 20px;
-            border-radius: 10px;
-        }
+/* BANNER */
+.banner {
+    background: linear-gradient(90deg, #ffd740, #ffc107);
+    color: #004d40;
+    padding: 15px;
+    text-align: center;
+    font-size: 20px;
+    margin: 15px;
+    border-radius: 10px;
+}
 
-        /* Categories */
-        #categories {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            padding: 20px;
-            gap: 20px;
-        }
+/* CATEGORIES */
+#categories {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 15px;
+}
 
-        .category-item {
-            width: 22%;
-            background: white;
-            border-radius: 8px;
-            padding: 18px;
-            text-align: center;
-            font-weight: bold;
-            border: 1px solid #ccc;
-            transition: 0.3s;
-        }
+.category-item {
+    width: 200px;
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    transition: 0.3s;
+}
 
-        .category-item:hover {
-            transform: scale(1.06);
-            background: #c8fff6;
-        }
+.category-item:hover {
+    transform: scale(1.05);
+    background: #c8fff6;
+}
 
-        /* Product Grid */
-        #featured {
-            padding: 20px;
-        }
+/* PRODUCTS */
+#featured {
+    padding: 15px;
+}
 
-        .product-grid {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
+.product-grid {
+    display: grid; /* 🔥 changed from flex */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
 
-        .product-item {
-            width: 260px;
-            background-color: white;
-            padding: 15px;
-            text-align: center;
-            border-radius: 12px;
-            border: 1px solid #ccc;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-            transition: 0.3s;
-        }
+/* CARD */
+.product-item {
+    background-color: white;
+    padding: 12px;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
 
-        .product-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-        }
-
-        .product-item img {
+.product-item img {
     width: 100%;
-    height: 180px;
+    height: 150px;
     object-fit: contain;
     background-color: white;
     padding: 5px;
     border-radius: 8px;
 }
 
+.product-item p {
+    margin: 6px 0;
+    color: #004d40;
+    font-size: 14px;
+}
 
-        .product-item p {
-            margin: 8px 0;
-            color: #004d40;
-            font-size: 16px;
-        }
+.product-item button {
+    margin-top: 8px;
+    background-color: #004d40;
+    color: white;
+    padding: 8px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%; /* 🔥 full width button */
+}
 
-        .product-item button {
-            margin-top: 10px;
-            background-color: #004d40;
-            color: white;
-            padding: 10px 18px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-        }
+/* FOOTER */
+footer {
+    background: #004d40;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
 
-        .product-item button:hover {
-            background-color: #00695c;
-        }
+/* 🔥 MOBILE SPECIFIC FIX */
+@media (max-width: 600px) {
 
-        /* Footer */
-        footer {
-            background: #004d40;
-            color: white;
-            text-align: center;
-            padding: 12px;
-            margin-top: 20px;
-        }
-    </style>
+    header h1 {
+        font-size: 18px;
+    }
+
+    .banner {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .category-item {
+        width: 100%; /* full width */
+    }
+
+    nav ul {
+        justify-content: center;
+    }
+}
+</style>
 </head>
 
 <body>
@@ -163,50 +173,45 @@
 
 <main>
 
-    <section class="banner">
-        Big Savings on Groceries and Essentials!
-    </section>
+<section class="banner">
+    Big Savings on Groceries and Essentials!
+</section>
 
-    <!-- CATEGORIES -->
-    <section id="categories">
-        <a href="groceries.html" class="category-item">Groceries</a>
-        <a href="clothing.html" class="category-item">Clothing</a>
-        <a href="electronics.html" class="category-item">Electronics</a>
-        <a href="home and kitchen.html" class="category-item">Home & Kitchen</a>
-    </section>
+<section id="categories">
+    <a href="groceries.html" class="category-item">Groceries</a>
+    <a href="clothing.html" class="category-item">Clothing</a>
+    <a href="electronics.html" class="category-item">Electronics</a>
+    <a href="home and kitchen.html" class="category-item">Home & Kitchen</a>
+</section>
 
-    <!-- FEATURED PRODUCTS -->
-    <section id="featured">
-        <h2 style="text-align:center; color:#004d40;">Popular Deals</h2>
+<section id="featured">
+    <h2 style="text-align:center; color:#004d40;">Popular Deals</h2>
 
-        <div class="product-grid">
+    <div class="product-grid">
 
-            <div class="product-item">
-                <img src="https://th.bing.com/th/id/OIP.wmQ-rkoa1v_c5pFTIPMR8QHaFa?w=254&h=185&c=7&r=0&o=5&dpr=1.3&pid=1.7">
-                <p>Rolex Men's Watch Fashion</p>
-                <p>₹50,000</p>
-                <button onclick="addToCart('Rolex Men\'s Watch Fashion', 50000, 
-                'https://th.bing.com/th/id/OIP.wmQ-rkoa1v_c5pFTIPMR8QHaFa?w=254&h=185&c=7&r=0&o=5&dpr=1.3&pid=1.7')">Add to Cart</button>
-            </div>
-
-            <div class="product-item">
-                <img src="https://www.rollingstone.com/wp-content/uploads/2022/09/Apple-AirPods-Pro-2nd-gen-hero-220907.jpg?w=1600&h=900&crop=1">
-                <p>OnePlus Earbuds</p>
-                <p>₹999</p>
-                <button onclick="addToCart('OnePlus Earbuds', 999, 
-                'https://www.rollingstone.com/wp-content/uploads/2022/09/Apple-AirPods-Pro-2nd-gen-hero-220907.jpg?w=1600&h=900&crop=1')">Add to Cart</button>
-            </div>
-
-            <div class="product-item">
-                <img src="https://cdn1.smartprix.com/rx-i5n1dTTOB-w1200-h1200/5n1dTTOB.jpg">
-                <p>iPhone 16 Pro</p>
-                <p>₹100,000</p>
-                <button onclick="addToCart('iPhone 16 Pro', 100000, 
-                'https://cdn1.smartprix.com/rx-i5n1dTTOB-w1200-h1200/5n1dTTOB.jpg')">Add to Cart</button>
-            </div>
-
+        <div class="product-item">
+            <img src="https://th.bing.com/th/id/OIP.wmQ-rkoa1v_c5pFTIPMR8QHaFa">
+            <p>Rolex Men's Watch</p>
+            <p>₹50,000</p>
+            <button onclick="addToCart('Rolex Watch', 50000)">Add to Cart</button>
         </div>
-    </section>
+
+        <div class="product-item">
+            <img src="https://www.rollingstone.com/wp-content/uploads/2022/09/Apple-AirPods-Pro-2nd-gen-hero-220907.jpg">
+            <p>OnePlus Earbuds</p>
+            <p>₹999</p>
+            <button onclick="addToCart('Earbuds', 999)">Add to Cart</button>
+        </div>
+
+        <div class="product-item">
+            <img src="https://cdn1.smartprix.com/rx-i5n1dTTOB-w1200-h1200/5n1dTTOB.jpg">
+            <p>iPhone 16 Pro</p>
+            <p>₹100,000</p>
+            <button onclick="addToCart('iPhone', 100000)">Add to Cart</button>
+        </div>
+
+    </div>
+</section>
 
 </main>
 
@@ -215,9 +220,9 @@
 </footer>
 
 <script>
-function addToCart(name, price, img) {
+function addToCart(name, price) {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cart.push({ name, price, img });
+    cart.push({ name, price });
     localStorage.setItem("cart", JSON.stringify(cart));
     alert("Item added to cart!");
 }
